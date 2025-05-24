@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <form class="card p-4 shadow-lg bg-light">
+
+    <h4 class="mb-4 text-warning">Edit Product</h4>
+
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Product Name" value="Smartphone X">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="3" placeholder="Enter product description...">A powerful smartphone with 5G and OLED display.</textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Price ($)</label>
+        <input type="number" class="form-control" value="499.99">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Stock</label>
+        <input type="number" class="form-control" value="25">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Category</label>
+        <select class="form-select">
+          <option disabled>Select Category</option>
+          <option selected>Phones</option>
+          <option>Laptops</option>
+          <option>Accessories</option>
+        </select>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Image URL</label>
+        <input type="text" class="form-control mb-2" value="https://example.com/images/product1.jpg">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100 mt-3">Update Product</button>
+
+  </form>
+</div>

@@ -1,0 +1,60 @@
+<div
+  class="d-flex justify-content-center align-items-center min-vh-100 login-background"
+>
+  <div class="card shadow p-5 rounded-4" style="width: 100%; max-width: 700px">
+    <h3 class="text-center mb-4">Welcome Back!</h3>
+
+    <form>
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control rounded-pill"
+          placeholder="Enter Email Address..."
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control rounded-pill"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="rememberMe" />
+        <label class="form-check-label" for="rememberMe">Remember Me</label>
+      </div>
+
+      <a
+        class="btn btn-primary btn-sm w-100 rounded-pill mb-3"
+        [routerLink]="['/main']"
+      >
+        Login
+      </a>
+
+      <hr />
+
+      <button class="btn btn-danger btn-sm w-100 rounded-pill mb-2">
+        <i class="fab fa-google me-2"></i> Login with Google
+      </button>
+
+      <button class="btn btn-facebook btn-sm w-100 rounded-pill">
+        <i class="fab fa-facebook-f me-2"></i> Login with Facebook
+      </button>
+    </form>
+
+    <div class="text-center mt-4">
+      <a href="#" class="d-block">Forgot Password?</a>
+      <a
+        href="#"
+        class="d-block"
+        [routerLink]="['/registration']"
+      >
+        Create an Account!
+      </a>
+    </div>
+  </div>
+</div>

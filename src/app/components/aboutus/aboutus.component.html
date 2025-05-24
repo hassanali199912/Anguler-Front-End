@@ -1,0 +1,59 @@
+<!-- Portfolio Section -->
+<section class="page-section bg-light py-5" id="portfolio">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">Portfolio</h2>
+      <h3 class="section-subheading text-muted">Showcasing some of our best work.</h3>
+    </div>
+    <div class="row gy-4">
+      <!-- Portfolio Item Template -->
+      <div class="col-lg-4 col-sm-6" *ngFor="let item of portfolioItems; let i = index">
+        <div class="portfolio-item shadow-sm rounded overflow-hidden">
+          <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{ i + 1 }}">
+            <div class="portfolio-hover d-flex align-items-center justify-content-center">
+              <div class="text-white"><i class="fas fa-plus fa-2x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/{{ i + 1 }}.jpg" alt="Portfolio {{ i + 1 }}" />
+          </a>
+          <div class="portfolio-caption text-center p-3 bg-white">
+            <div class="portfolio-caption-heading fw-bold">{{ item.title }}</div>
+            <div class="portfolio-caption-subheading text-muted">{{ item.category }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="page-section py-5" id="about">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">About</h2>
+      <h3 class="section-subheading text-muted">Our journey and growth through the years.</h3>
+    </div>
+    <ul class="timeline">
+      <!-- Timeline Items -->
+      <li *ngFor="let step of aboutTimeline; let i = index" [ngClass]="{ 'timeline-inverted': i % 2 !== 0 }">
+        <div class="timeline-image">
+          <img class="rounded-circle img-fluid" [src]="'assets/img/about/' + (i + 1) + '.jpg'" alt="About Image {{ i + 1 }}" />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>{{ step.date }}</h4>
+            <h4 class="subheading">{{ step.title }}</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">{{ step.description }}</p>
+          </div>
+        </div>
+      </li>
+      <!-- Final Call-to-Action -->
+      <li class="timeline-inverted">
+        <div class="timeline-image d-flex align-items-center justify-content-center">
+          <h4>Be Part<br />Of Our<br />Story!</h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+<!-- styles.css or component.css -->
+<style>
+  .custom-header {
+    background-color: #2c3e50; 
+  }
+
+  .custom-header .nav-link,
+  .custom-header .navbar-brand,
+  .custom-header .dropdown-toggle,
+  .custom-header .dropdown-item {
+    color: white !important;
+  }
+
+  .custom-header .dropdown-menu {
+    background-color: #34495e;
+  }
+
+  .custom-header .dropdown-item:hover {
+    background-color: #2c3e50;
+    color: #f1f1f1;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg custom-header border-bottom px-3 py-2">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <div class="bg-light text-dark rounded px-2 py-1 me-2 fw-bold">Stylek</div>
+
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3">
+          <a class="nav-link" [routerLink]="['/main/home']">Home</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" [routerLink]="['/main/products']">Products</a>
+        </li>
+        <li class="nav-item dropdown me-3">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dashboardDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dashboard
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+            <li>
+              <a class="dropdown-item" [routerLink]="['/main/AddProduct']">AddProduct</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/main/AddCategory']">AddCategory</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input
+        type="text"
+        class="form-control me-3"
+        style="max-width: 250px"
+        placeholder="Search..."
+      />
+
+      <div class="dropdown">
+        <a
+          class="d-flex align-items-center text-decoration-none dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownUser"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://i.pravatar.cc/40"
+            alt="user"
+            class="rounded-circle"
+            width="36"
+            height="36"
+          />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item" [routerLink]="['/registration']">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+.login-background {
+  background: linear-gradient(to right, #7190b0, #7190b0);
+}
+.text-center a {
+  color: #ccc; /* لون خفيف */
+  text-decoration: none; /* إزالة السطر */
+  transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+  color: #fff; /* لون أفتح عند المرور */
+  text-decoration: none;
+}
+/* Login button (blue) */
+.btn-primary {
+  background-color: #0d6efd;
+  filter: brightness(1.05);
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15);
+}
+
+/* Google login button */
+.btn-danger {
+  background-color: #dc3545;
+  filter: brightness(1.05);
+  border: none;
+}
+
+.btn-danger:hover {
+  filter: brightness(1.15);
+}
+
+/* Facebook login button */
+.btn-facebook {
+  background-color: #3b5998;
+  filter: brightness(1.05);
+  color: white;
+  border: none;
+}
+
+.btn-facebook:hover {
+  filter: brightness(1.15);
+}

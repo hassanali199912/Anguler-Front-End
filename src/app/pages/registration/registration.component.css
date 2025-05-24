@@ -1,0 +1,44 @@
+.login-background {
+  background: linear-gradient(to right, #7190b0, #7190b0);
+}
+.text-center a {
+  color: #ccc; 
+  text-decoration: none; 
+  transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+  color: #fff; 
+  text-decoration: none;
+}
+/* زر Register */
+.btn-primary {
+  background-color: #0d6efd; 
+  filter: brightness(1.05);  
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15); 
+}
+
+.btn-danger {
+  background-color: #dd5664; 
+  filter: brightness(1.05);  
+  border: none;
+}
+
+.btn-danger:hover {
+  filter: brightness(1.15);  
+}
+
+.btn-facebook {
+  background-color: #4568b3;
+  filter: brightness(1.05);
+  color: white;
+  border: none;
+}
+
+.btn-facebook:hover {
+  filter: brightness(1.15);
+}

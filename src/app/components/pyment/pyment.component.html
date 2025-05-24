@@ -1,0 +1,39 @@
+<div class="container mt-5" style="max-width: 480px;">
+  <div class="card shadow-lg p-4 rounded-4" style="background: linear-gradient(135deg, #a475d6 0%, #2575fc 100%); color: white;">
+    <h2 class="mb-4 text-center fw-bold">Payment Details</h2>
+    <form>
+      <!-- Cardh Name -->
+      <div class="mb-3 position-relative">
+        <label for="cardName" class="form-label">Card Name</label>
+        <input type="text" class="form-control rounded-3 ps-5" id="cardName" placeholder="John Doe" required style="height: 45px;">
+        <i class="fas fa-user position-absolute" style="top: 45px; left: 15px; color: #d0d0d0;"></i>
+      </div>
+
+      <!-- Card Number -->
+      <div class="mb-3 position-relative">
+        <label for="cardNumber" class="form-label">Card Number</label>
+        <input type="text" class="form-control rounded-3 ps-5" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required style="height: 45px;" pattern="[\d ]+">
+        <i class="fas fa-credit-card position-absolute" style="top: 45px; left: 15px; color: #d0d0d0;"></i>
+      </div>
+
+      <div class="row">
+        <!-- Expiry Date -->
+        <div class="col-6 mb-3 position-relative">
+          <label for="expiryDate" class="form-label">Expiry Date</label>
+          <input type="month" class="form-control rounded-3 ps-5" id="expiryDate" required style="height: 45px; color: black;">
+        </div>
+
+        <!-- CVV -->
+        <div class="col-6 mb-3 position-relative">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="password" class="form-control rounded-3 ps-5" id="cvv" placeholder="1234" maxlength="4" required style="height: 45px;">
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-light text-primary fw-bold w-100 py-2 fs-5 rounded-4 shadow-sm">
+        <i class="fas fa-credit-card me-2"></i> Pay Now
+      </button>
+    </form>
+  </div>
+</div>
