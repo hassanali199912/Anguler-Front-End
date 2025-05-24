@@ -105,8 +105,8 @@
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/project",
-            "netlifyToken": "",
-            "siteId": ""
+            "netlifyToken": "nfp_gdrcsnQDXRzUwmgMXSzExCaz8nUr2ube4b32",
+            "siteId": "9d572320-766b-416d-a223-1c82d6f94b73"
           }
         }
       }
