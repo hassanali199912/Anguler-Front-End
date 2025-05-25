@@ -8,5 +8,5 @@ import { RouterLink  } from '@angular/router';
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
-
+  
 }
