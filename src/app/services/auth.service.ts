@@ -10,11 +10,11 @@ export class AuthService {
 
   private readonly _HttpClient = inject(HttpClient);
 
-  SetRegisterForm(data:object):Observable<any>{
+  SetRegisterForm(data: object): Observable<any> {
     return this._HttpClient.post(`${environment.baseURL}/api/Auth/register`, data);
   }
 
-  SetLoginForm(data:object):Observable<any>{
+  SetLoginForm(data: object): Observable<any> {
     return this._HttpClient.post(`${environment.baseURL}/api/Auth/login`, data);
   }
 }
