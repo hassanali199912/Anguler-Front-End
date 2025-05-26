@@ -15,6 +15,6 @@ export class AuthService {
   }
 
   SetLoginForm(data:object):Observable<any>{
-    return this._HttpClient.post(`${environment.baseURL}/api/Auth/register`, data);
+    return this._HttpClient.post(`${environment.baseURL}/api/Auth/login`, data);
   }
 }
