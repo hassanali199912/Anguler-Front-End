@@ -8,6 +8,8 @@ import { PymentComponent } from './components/pyment/pyment.component';
 import { CarddetailsComponent } from './components/carddetails/carddetails.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { CartComponent } from './components/cart/cart.component';
+import { PaymentsuccessfulComponent } from './components/paymentsuccessful/paymentsuccessful.component';
 export const routes: Routes = [
   {
     path: '',
@@ -46,13 +48,21 @@ export const routes: Routes = [
         path: 'details',
         component: CarddetailsComponent,
       },
-         {
+      {
         path: 'AddProduct',
         component: AddProductComponent,
       },
       {
         path: 'AddCategory',
         component: AddCategoryComponent,
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
+      },
+      {
+        path: 'paymentSuccess',
+        component: PaymentsuccessfulComponent,
       },
     ],
   },

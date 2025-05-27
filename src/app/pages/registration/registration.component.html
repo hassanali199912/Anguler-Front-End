@@ -1,76 +1,82 @@
-<div
-  class="d-flex justify-content-center align-items-center min-vh-100 login-background"
->
+<div class="d-flex justify-content-center align-items-center min-vh-100 login-background">
   <div class="card shadow p-5 rounded-4" style="width: 100%; max-width: 700px">
     <h3 class="text-center mb-4">Create an Account!</h3>
 
-<form>
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control rounded-pill"
-      placeholder="Full Name"
-      required
-    />
-  </div>
+    <form [formGroup]="regesterForm" (ngSubmit)="onSubmit()">
 
-  <div class="mb-3">
-    <input
-      type="email"
-      class="form-control rounded-pill"
-      placeholder="Enter Email Address..."
-      required
-    />
-  </div>
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="name">UserName</label>
+        <input id="name" formControlName="name" type="text" class="form-control rounded-pill" placeholder="Full Name" />
+        <div *ngIf="regesterForm.get('name')?.invalid && regesterForm.get('name')?.touched" class="text-danger">
+          <div *ngIf="regesterForm.get('name')?.errors?.['required']">
+            The Name Is Required
+          </div>
+          <div *ngIf="regesterForm.get('name')?.errors?.['minlength']">
+            Name must be at least 3 characters
+          </div>
+          <div *ngIf="regesterForm.get('name')?.errors?.['pattern']">
+            Name must not contain spaces
+          </div>
+        </div>
+      </div>
 
-  <div class="mb-3">
-    <input
-      type="password"
-      class="form-control rounded-pill"
-      placeholder="Password"
-      required
-    />
-  </div>
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email">Email Address</label>
+        <input id="email" formControlName="email" type="email" class="form-control rounded-pill"
+          placeholder="Enter Email Address..." />
+        <div *ngIf="regesterForm.get('email')?.invalid && regesterForm.get('email')?.touched" class="text-danger">
+          <div *ngIf="regesterForm.get('email')?.errors?.['required']">
+            The Email Is Required
+          </div>
+          <div *ngIf="regesterForm.get('email')?.errors?.['email']">
+            Invalid Email Format
+          </div>
+        </div>
+      </div>
 
-  <div class="mb-3">
-    <input
-      type="password"
-      class="form-control rounded-pill"
-      placeholder="Confirm Password"
-      required
-    />
-  </div>
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" class="form-control rounded-pill"
+          placeholder="Password" />
+        <div *ngIf="regesterForm.get('password')?.invalid && regesterForm.get('password')?.touched" class="text-danger">
+          <div *ngIf="regesterForm.get('password')?.errors?.['required']">
+            The Password Is Required
+          </div>
+          <div *ngIf="regesterForm.get('password')?.errors?.['minlength']">
+            Password must be at least 8 characters
+          </div>
+        </div>
+      </div>
 
-  <div class="form-check mb-3">
-    <input type="checkbox" class="form-check-input" id="agreeTerms" />
-    <label class="form-check-label" for="agreeTerms">
-      I agree to the Terms and Conditions
-    </label>
-  </div>
+      <!-- Confirm Password -->
+      <div class="mb-3">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control rounded-pill"
+          placeholder="Confirm Password" />
+        <div
+          *ngIf="(regesterForm.get('confirmPassword')?.invalid && regesterForm.get('confirmPassword')?.touched) || regesterForm.errors?.['passwordMismatch']"
+          class="text-danger">
+          <div *ngIf="regesterForm.get('confirmPassword')?.errors?.['required']">
+            Confirming Password Is Required
+          </div>
+          <div *ngIf="regesterForm.get('confirmPassword')?.errors?.['minlength']">
+            Password must be at least 8 characters
+          </div>
+          <div *ngIf="regesterForm.errors?.['passwordMismatch']">
+            Passwords do not match
+          </div>
+        </div>
+      </div>
 
-  <a
-    class="btn btn-primary btn-sm w-100 rounded-pill mb-3"
-    [routerLink]="['/login']"
-  >
-    Register
-  </a>
+      <button class="btn btn-primary btn-sm w-100 rounded-pill mb-3" type="submit">
+        Register
+      </button>
 
-  <hr />
 
-  <button
-    type="button"
-    class="btn btn-danger btn-sm w-100 rounded-pill mb-2"
-  >
-    <i class="fab fa-google me-2"></i> Register with Google
-  </button>
-
-  <button
-    type="button"
-    class="btn btn-facebook btn-sm w-100 rounded-pill"
-  >
-    <i class="fab fa-facebook-f me-2"></i> Register with Facebook
-  </button>
-</form>
+    </form>
 
 
     <div class="text-center mt-4">

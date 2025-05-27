@@ -1,0 +1,24 @@
+    .success-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #e6ffed;
+  border: 1px solid #b2f2bb;
+  border-radius: 8px;
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+.success-container h2 {
+  color: #2f9e44;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2f9e44;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+

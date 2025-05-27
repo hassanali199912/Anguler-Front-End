@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.login-background {
+  background: linear-gradient(to right, #7190b0, #7190b0);
+}
+
+.div-min-100-vh {
+  min-height: 80vh;
+}

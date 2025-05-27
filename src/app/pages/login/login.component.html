@@ -5,8 +5,7 @@
     <form [formGroup]="LoginFrom" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="email">Email Address </label>
-        <input id="email" formControlName="email" 
-        type="email" class="form-control rounded-pill" value="hassan@app.com"
+        <input id="email" formControlName="email" type="email" class="form-control rounded-pill" value="hassan@app.com"
           placeholder="Enter Email Address..." />
         <div *ngIf="LoginFrom.get('email')?.invalid && LoginFrom.get('email')?.touched" class="text-danger">
           <div *ngIf="LoginFrom.get('email')?.errors?.['required']">
@@ -33,12 +32,6 @@
       </div>
 
 
-
-      <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input" id="rememberMe" />
-        <label class="form-check-label" for="rememberMe">Remember Me</label>
-      </div>
-
       <button class="btn btn-primary btn-sm w-100 rounded-pill mb-3" type="submit">
         Login
       </button>
@@ -55,10 +48,10 @@
     </form>
 
     <div class="text-center mt-4">
-      <a href="#" class="d-block">Forgot Password?</a>
-      <a href="#" class="d-block" [routerLink]="['/registration']">
-        Create an Account!
+      <a [routerLink]="['/registration']" class="btn btn-primary btn-lg w-75 mb-2">
+        Create An Account
       </a>
+      <a href="#" class="d-block">Forgot Password?</a>
     </div>
   </div>
 </div>
