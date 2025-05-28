@@ -45,7 +45,7 @@ export const routes: Routes = [
         component: PymentComponent,
       },
       {
-        path: 'details',
+        path: 'details/:id',
         component: CarddetailsComponent,
       },
       {

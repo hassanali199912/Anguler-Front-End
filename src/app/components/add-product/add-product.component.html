@@ -1,50 +1,55 @@
 <div class="div-min-100-vh d-flex justify-content-center align-items-center">
 
   <div class="container mt-4">
-    <form class="card p-4 shadow-lg bg-light">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(); $event.preventDefault()" class="card p-4 shadow-lg bg-light">
 
       <h4 class="mb-4 text-primary">Add New Product</h4>
 
       <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="text" class="form-control" placeholder="Product Name">
+        <input type="text" [(ngModel)]="product.name" name="name" class="form-control" placeholder="Product Name" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Description</label>
-        <textarea class="form-control" rows="3" placeholder="Enter product description..."></textarea>
+        <textarea [(ngModel)]="product.description" name="description" class="form-control" rows="3" placeholder="Enter product description..." required></textarea>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Price ($)</label>
-          <input type="number" class="form-control" placeholder="e.g. 99.99">
+          <input type="number" [(ngModel)]="product.price" name="price" class="form-control" placeholder="e.g. 99.99" required>
         </div>
         <div class="col-md-6 mb-3">
           <label class="form-label">Stock</label>
-          <input type="number" class="form-control" placeholder="e.g. 100">
+          <input type="number" [(ngModel)]="product.stock" name="stock" class="form-control" placeholder="e.g. 100" required>
         </div>
       </div>
-
 
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label class="form-label">Category</label>
-          <select class="form-select">
-            <option disabled selected> Select Category </option>
-            <option>Phones</option>
-            <option>Laptops</option>
-            <option>Accessories</option>
-          </select>
-
+          <label class="form-label">Brand</label>
+          <input type="text" [(ngModel)]="product.brand" name="brand" class="form-control" placeholder="Enter brand name" required>
         </div>
         <div class="col-md-6 mb-3">
-          <label class="form-label">Image</label>
-          <input type="text" class="form-control mb-2" placeholder="Image URL 1">
+          <label class="form-label">Category</label>
+          <select [(ngModel)]="product.category" name="category" class="form-select" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Books">Books</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Home">Home</option>
+            <option value="Sports">Sports</option>
+          </select>
         </div>
       </div>
 
-
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Image URL</label>
+          <input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" class="form-control" placeholder="Enter image URL" required>
+        </div>
+      </div>
 
       <button type="submit" class="btn btn-primary w-100 mt-3">Save Product</button>
 

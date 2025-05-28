@@ -1,21 +1,19 @@
 <div class="div-min-100-vh d-flex justify-content-center align-items-center">
   <div class="container mt-4">
-    <form class="card p-4 shadow-lg bg-light">
-
+    <form #categoryForm="ngForm" (ngSubmit)="onSubmit(); $event.preventDefault()" class="card p-4 shadow-lg bg-light">
       <h4 class="mb-4 text-primary">Add New Category</h4>
 
       <div class="mb-3">
         <label class="form-label">Category Name</label>
-        <input type="text" class="form-control" placeholder="e.g. Phones">
+        <input type="text" [(ngModel)]="category.name" name="name" class="form-control" placeholder="e.g. Phones" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Description</label>
-        <textarea class="form-control" rows="3" placeholder="Enter category description..."></textarea>
+        <textarea [(ngModel)]="category.description" name="description" class="form-control" rows="3" placeholder="Enter category description..." required></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary w-100 mt-3">Save Category</button>
-
     </form>
   </div>
 </div>

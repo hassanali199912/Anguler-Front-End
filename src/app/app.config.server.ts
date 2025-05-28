@@ -1,18 +1,20 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { mergeApplicationConfig, ApplicationConfig, PLATFORM_ID } from '@angular/core';
 import { provideServerRendering } from '@angular/platform-server';
 import { appConfig } from './app.config';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './config/apis';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './config/apis';
+import { CartService } from './services/orderItem.service';
 
 const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
     {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
+      provide: CartService,
+      useValue: null
     }
-
   ]
 };
 
