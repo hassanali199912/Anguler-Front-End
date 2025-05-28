@@ -15,10 +15,13 @@ export class CardComponent implements OnInit {
   @Input() products: IProduct[] = [];
   isLoading = false;
   errorMsg = '';
+  image:string = "";
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
+    let randomNum = Math.floor(Math.random() * 10);
+    this.image = `https://picsum.photos/350/350?random=${randomNum}`
     // No need to fetch products anymore as they are passed as input
     this.isLoading = false;
   }

@@ -32,7 +32,7 @@ export class AddProductComponent {
   createProduct(product: IProduct) {
     this._productService.createProduct(product).subscribe({
       next: (response) => {
-        // console.log(response);
+        console.log(response);
         this.router.navigate(['/main/products']);
       },
       error: (error) => {

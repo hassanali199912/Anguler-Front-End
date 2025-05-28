@@ -56,7 +56,7 @@ export class RegistrationComponent {
 
               localStorage.setItem('userToken', res.data.token);
               this._authService.saveUserData();
-              this.router.navigate(['/main']);
+              this.router.navigate(['/']);
 
             }, 1000);
           } else {

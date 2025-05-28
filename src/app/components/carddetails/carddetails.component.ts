@@ -15,6 +15,7 @@ export class CarddetailsComponent implements OnInit {
   product: Product | undefined;
   isLoading = true;
   errorMsg = '';
+  image:string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +23,8 @@ export class CarddetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    let randomNum = Math.floor(Math.random() * 10);
+    this.image = `https://picsum.photos/350/350?random=${randomNum}`
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (!id) {
       this.errorMsg = 'Invalid product ID.';
